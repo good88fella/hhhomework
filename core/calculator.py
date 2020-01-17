@@ -1,6 +1,6 @@
 from decorators import cache_decorator
 
-
+@cache_decorator
 def calculator(a, b, operation):
     # Здесь нужно реализовать функцию,
     # которая реализует основные арифметические операции между числами: +, -, /, *, **.
@@ -21,11 +21,13 @@ def calculator(a, b, operation):
 
 if __name__ == '__main__':
     try:
-        a = int(input('Введите число: '))  # Тут было бы неплохо обрабатывать ошибку в случае передачи некорректных символов
-        b = int(input('Введите число: '))
-        operation = input('Введите операцию: ')
+        print("To exit, press CTRL+C")
+        while(True):
+            a = int(input('Введите число: '))  # Тут было бы неплохо обрабатывать ошибку в случае передачи некорректных символов
+            b = int(input('Введите число: '))
+            operation = input('Введите операцию: ')
 
-        print('Результат: ', calculator(a, b, operation))
+            print('Результат: ', calculator(a, b, operation))
 
     except ValueError:
         print("Incorrect input.\nUsage:\n"
@@ -34,3 +36,5 @@ if __name__ == '__main__':
               "Введите операцию: [+, -, /, *, **]")
     except ZeroDivisionError:
         print("Division by zero")
+    except KeyboardInterrupt:
+        print("\nGoodbye")

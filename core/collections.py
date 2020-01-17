@@ -21,7 +21,7 @@ numbers = [5, 10, 15, 20, 25]
 
 
 def get_first_n_last(some_list):
-    return [some_list[0], some_list[len(some_list) - 1]]
+    return [some_list[0], some_list[-1]]
 
 
 # Написать функцию, которая принимает список и возвращает новый список, состоящий из элементов принятого,
